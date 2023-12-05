@@ -113,10 +113,10 @@ body {
     text-transform: uppercase;
     margin-bottom: 10px;
     color: 	#000000; 
-    text-shadow: -2px -2px 0 #fff, /* White outline */
-        2px -2px 0 #fff, 
-        -2px 2px 0 #fff, 
-        2px 2px 0 #fff; 
+    text-shadow: -1px -1px 0 #000, /* Black outline */
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000; 
 }
 
 .home-description {
