@@ -1,0 +1,113 @@
+:root {
+    --color-primary: rgb(222, 78, 1);
+    --color-black: black;
+    --color-white: white; 
+    --color-yellow: rgb(248, 248, 33); 
+    --color-new: rgb(30, 25, 48);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial' , 'sans-serif';
+}
+
+body {
+    display: block;
+    background-attachment: fixed;
+    background-color: var(--color-primary);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fish_cins {
+    background-color: var(--color-new);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.Logo{
+    color: var(--color-yellow);
+    font-size: 30px;
+}
+
+.Logo span {
+    color: var(--color-primary);
+}
+
+.fish_cins ul {
+    list-style: none;
+    display: flex;
+}
+
+.fish_cins ul li {
+    padding: 10px 30px;
+    position: relative;
+}
+
+.fish_cins ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.fish_cins ul li a:hover {
+    color: var(--color-primary);
+}
+
+.fish {
+    display: none;
+}
+
+.fish_cins ul li:hover .fish {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(30, 25, 48);
+}
+
+.fish_cins ul li:hover .fish ul {
+    display: block;
+    margin: 10px;
+}
+
+.fish_cins ul li:hover .fish ul li {
+    width: 150px;
+    padding: 10px;
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.fish-boxes {
+    display: flex;
+}
+
+.fish-box {
+    margin: 10px;
+    text-align: center;
+}
+
+.fish-box img {
+    width: 350px; 
+    height: auto;
+    border: 10px solid #190e29; 
+    border-radius: 40px; 
+    padding: 10px;
+}
+
+
