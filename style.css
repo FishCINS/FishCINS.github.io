@@ -102,20 +102,30 @@ body {
 }
 
 .content-right img {
-    max-width: 75%; /* Makes images responsive */
+    max-width: 75%; /*image size */
     height: auto;
-    margin-bottom: 20px; /* Adjusts space between images */
+    margin-bottom: 20px; /* space between images */
 }
 
 .home-title {
-    font-size: 5em; /* Enlarges the title */
-    font-family: 'Pacifico', cursive; /* Adds a fancy font - Pacifico */
-    text-transform: uppercase; /* Converts text to uppercase */
-    margin-bottom: 10px; /* Adjusts space after title */
+    font-size: 5em;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: 	#000000; 
+    text-shadow: -2px -2px 0 #fff, /* White outline */
+        2px -2px 0 #fff, 
+        -2px 2px 0 #fff, 
+        2px 2px 0 #fff; 
 }
 
 .home-description {
-    font-size: 1.8em; /* Increases the description font size */
-    font-family: 'Lobster', cursive; /* Adds a fancy font - Lobster */
-    line-height: 1.8; /* Adjusts line spacing for better readability */
+    font-size: 1.8em;
+    font-family: 'Lobster', cursive;
+    line-height: 1.8;
+    color: #FFFFFF;
+    text-shadow:  -1px -1px 0 #000, /* Black outline */
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000; 
 }
