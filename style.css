@@ -106,3 +106,16 @@ body {
     height: auto;
     margin-bottom: 20px; /* Adjusts space between images */
 }
+
+.home-title {
+    font-size: 5em; /* Enlarges the title */
+    font-family: 'Pacifico', cursive; /* Adds a fancy font - Pacifico */
+    text-transform: uppercase; /* Converts text to uppercase */
+    margin-bottom: 10px; /* Adjusts space after title */
+}
+
+.home-description {
+    font-size: 1.8em; /* Increases the description font size */
+    font-family: 'Lobster', cursive; /* Adds a fancy font - Lobster */
+    line-height: 1.8; /* Adjusts line spacing for better readability */
+}
