@@ -87,32 +87,22 @@ body {
 
 .home-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     padding: 20px;
 }
 
-.home-content {
-    display: flex;
-    align-items: flex-start;
-}
-
 .content-left {
-    flex: 0 0 60%; /* adjust left width of content */
+    flex: 1; /* Adjusts left content size */
 }
 
 .content-right {
-    flex: 0 0 30%; /*adjust right width of content */
-    /* You can add styles for the images here */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Adjusts right content size */
+    justify-content: flex-start;
 }
 
-/* Title and description */
-.home-title {
-    font-size: 4em;
-    margin-bottom: 20px;
-}
-
-.home-description {
-    font-size: 1.5em;
-    line-height: 1.6;
+.content-right img {
+    max-width: 100%; /* Makes images responsive */
+    height: auto;
+    margin-bottom: 20px; /* Adjusts space between images */
 }
