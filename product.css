@@ -1,10 +1,9 @@
-:root {
+        :root {
     --color-primary: rgb(222, 78, 1);
     --color-black: black;
     --color-white: white; 
     --color-yellow: rgb(248, 248, 33); 
     --color-new: rgb(30, 25, 48);
-
 }
 
 * {
@@ -17,7 +16,7 @@
 body {
     display: block;
     background-attachment: fixed;
-    background-color: var(--color-primary);
+    background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -109,5 +108,3 @@ body {
     border-radius: 40px; 
     padding: 10px;
 }
-
-
