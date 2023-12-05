@@ -17,7 +17,7 @@
 body {
     display: block;
     background-attachment: fixed;
-    background-color: #ff6600;
+    background-color: #b84802;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -112,11 +112,11 @@ body {
     font-family: 'Pacifico', cursive;
     text-transform: uppercase;
     margin-bottom: 10px;
-    color: 	#000000; 
-    text-shadow: -1px -1px 0 #000, /* Black outline */
-        1px -1px 0 #000, 
-        -1px 1px 0 #000, 
-        1px 1px 0 #000; 
+    color: #000000;
+    text-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .home-description {
@@ -130,6 +130,17 @@ body {
         1px 1px 0 #000; 
 }
 
+.fish-part {
+    color: #FFFF00;
+    font-size: 1.2em; /* Adjust the size */
+    font-family: 'Pacifico', cursive; /* Apply the same font as the title */
+    letter-spacing: 3px; /* Increase the spacing between letters */
+    margin-right: -5px; /* Adjust the spacing between "Fish" and "CINS" */
+}
+
 .cins-part {
-    color: #FFA500;
+    color: #ff6303;
+    font-size: 1.2em; /* Adjust the size */
+    font-family: 'Pacifico', cursive; /* Apply the same font as the title */
+    letter-spacing: 3px; /* Increase the spacing between letters */
 }
