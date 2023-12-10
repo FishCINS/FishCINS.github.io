@@ -19,13 +19,22 @@
                 <li><a href="#">About</a></li>
                 <li><a href="product.html">Product</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Location</a></li>
+                <li><a href="#" id="locationBtn">Location</a></li>
+                <li><a href="#" id="ordersBtn">Orders</a></li>
             </ul>
 
         </div>
 
     </header>
 
+
+      <div class="orders-area" style="display: none;">
+        <!-- Area to display orders -->
+        <!-- Initial message: "Your Orders are empty" or "Your Cart is empty" -->
+        <p id="emptyOrdersMsg">Your Orders are empty.</p>
+        <ul id="ordersList"></ul>
+    </div>
+    
         <div class="content-section">
             <div class="fish-boxes">
                 <div class="fish-box" id="fish-box1">
@@ -131,6 +140,27 @@
         } else {
             alert('Please select an option');
         }
+
+  const ordersBtn = document.getElementById('ordersBtn');
+    const ordersArea = document.querySelector('.orders-area');
+    const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
+    const ordersList = document.getElementById('ordersList');
+    const placeOrderBtns = document.querySelectorAll('.placeOrder');
+
+    ordersBtn.addEventListener('click', function() {
+        ordersArea.style.display = 'block'; // Show orders area
+    });
+
+    placeOrderBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const selectedOption = this.parentElement.querySelector('.selected-option.selected');
+            if (selectedOption) {
+                const orderItem = document.createElement('li');
+                orderItem.textContent = `Order: ${selectedOption.textContent}`;
+                ordersList.appendChild(orderItem);
+                emptyOrdersMsg.style.display = 'none'; // Hide empty orders message
+            }
+        });
     });
 });
     </script>
