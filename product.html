@@ -106,63 +106,38 @@
             </div>
         </div>
 
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
-    const bangusDropdown = document.getElementById('bangusDropdown');
-    const bangusOptions = document.querySelectorAll('.fish-box#fish-box1 .selections span');
+            const ordersBtn = document.getElementById('ordersBtn');
+            const ordersArea = document.querySelector('.orders-area');
+            const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
+            const ordersList = document.getElementById('ordersList');
+            const placeOrderBtns = document.querySelectorAll('.placeOrder');
+            const dropdownBtns = document.querySelectorAll('.dropbtn');
 
-    bangusDropdown.addEventListener('change', function() {
-        bangusOptions.forEach(option => {
-            option.classList.remove('selected');
-        });
-
-        if (bangusDropdown.value !== 'default') {
-            const selectedOption = document.querySelector(`.fish-box#fish-box1 .selections .${bangusDropdown.value}`);
-            selectedOption.classList.add('selected');
-        }
-    });
-
-    bangusOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            bangusOptions.forEach(opt => {
-                opt.classList.remove('selected');
+            ordersBtn.addEventListener('click', function() {
+                ordersArea.style.display = 'block'; // Show orders area
             });
-            option.classList.add('selected');
+
+            dropdownBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const dropdownContent = this.nextElementSibling;
+                    dropdownContent.classList.toggle('show');
+                });
+            });
+
+            placeOrderBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const selectedOption = this.parentElement.querySelector('.selected-option.selected');
+                    if (selectedOption) {
+                        const orderItem = document.createElement('li');
+                        orderItem.textContent = `Order: ${selectedOption.textContent}`;
+                        ordersList.appendChild(orderItem);
+                        emptyOrdersMsg.style.display = 'none'; // Hide empty orders message
+                    }
+                });
+            });
         });
-    });
-
-    const placeOrderBtn = document.querySelector('.fish-box#fish-box1 .placeOrder');
-    placeOrderBtn.addEventListener('click', function() {
-        const selected = document.querySelector('.fish-box#fish-box1 .selections .selected');
-        if (selected) {
-            alert(`Order placed for ${selected.className}`);
-            // Here you can add further actions when the order is placed
-        } else {
-            alert('Please select an option');
-        }
-
-  const ordersBtn = document.getElementById('ordersBtn');
-    const ordersArea = document.querySelector('.orders-area');
-    const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
-    const ordersList = document.getElementById('ordersList');
-    const placeOrderBtns = document.querySelectorAll('.placeOrder');
-
-    ordersBtn.addEventListener('click', function() {
-        ordersArea.style.display = 'block'; // Show orders area
-    });
-
-    placeOrderBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const selectedOption = this.parentElement.querySelector('.selected-option.selected');
-            if (selectedOption) {
-                const orderItem = document.createElement('li');
-                orderItem.textContent = `Order: ${selectedOption.textContent}`;
-                ordersList.appendChild(orderItem);
-                emptyOrdersMsg.style.display = 'none'; // Hide empty orders message
-            }
-        });
-    });
-});
     </script>
 
     
