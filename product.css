@@ -110,7 +110,6 @@ body {
 }
 
 .product-dropdown {
-    position: relative;
     display: inline-block;
     margin-bottom: 20px;
 }
@@ -137,13 +136,15 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .dropdown-content .option {
     color: var(--color-yellow);
-    padding: 12px 16px;
-    text-decoration: none;
+    padding: 5px;
     display: block;
+    cursor: pointer;
 }
 
 .dropdown-content .option:hover {
@@ -159,6 +160,7 @@ body {
     color: var(--color-primary);
 }
 
+/* Selectable Options Styles */
 .selected-option {
     display: inline-block;
     width: 20px;
