@@ -7,120 +7,7 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        :root {
-    --color-primary: rgb(222, 78, 1);
-    --color-black: black;
-    --color-white: white; 
-    --color-yellow: rgb(248, 248, 33); 
-    --color-new: rgb(30, 25, 48);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial' , 'sans-serif';
-}
-
-body {
-    display: block;
-    background-attachment: fixed;
-    background-image: url('background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.fish_cins {
-    background-color: var(--color-new);
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-}
-
-.Logo{
-    color: var(--color-yellow);
-    font-size: 30px;
-}
-
-.Logo span {
-    color: var(--color-primary);
-}
-
-.fish_cins ul {
-    list-style: none;
-    display: flex;
-}
-
-.fish_cins ul li {
-    padding: 10px 30px;
-    position: relative;
-}
-
-.fish_cins ul li a {
-    color: var(--color-white);
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.3s;
-}
-
-.fish_cins ul li a:hover {
-    color: var(--color-primary);
-}
-
-.fish {
-    display: none;
-}
-
-.fish_cins ul li:hover .fish {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: rgb(30, 25, 48);
-}
-
-.fish_cins ul li:hover .fish ul {
-    display: block;
-    margin: 10px;
-}
-
-.fish_cins ul li:hover .fish ul li {
-    width: 150px;
-    padding: 10px;
-}
-
-.content-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-   
-}
-
-.fish-boxes {
-    display: flex;
-}
-
-.fish-box {
-    margin: 10px;
-    text-align: center;
-}
-
-.fish-box img {
-    width: 350px; 
-    height: auto;
-    border: 10px solid #190e29; 
-    border-radius: 40px; 
-    padding: 10px;
-}
-
-    </style>
-   
+  
 </head>
 <body>
     <header>
@@ -144,20 +31,21 @@ body {
                 <div class="fish-box" id="fish-box1">
                     <!-- Content for the first box goes here -->
                     <img src="bangus.jpg" alt="Fish 1">
-                    <p>BANGUS</p>
-                      <div class="dropdown">
-                <select id="bangusDropdown">
-                    <option value="default">Select an option</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
+                     <div class="product-dropdown">
+                <div class="dropdown">
+                    <button class="dropbtn">BANGUS &#9662;</button>
+                    <div class="dropdown-content">
+                        <span class="option">Option 1</span>
+                        <span class="option">Option 2</span>
+                        <span class="option">Option 3</span>
+                        <span class="option">Option 4</span>
+                    </div>
+                </div>
                 <div class="selections">
-                    <span class="option1"></span>
-                    <span class="option2"></span>
-                    <span class="option3"></span>
-                    <span class="option4"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
                 </div>
                 <button class="placeOrder">Place Order</button>
             </div>
@@ -165,20 +53,21 @@ body {
                 <div class="fish-box" id="fish-box2">
                     <!-- Content for the second box goes here -->
                     <img src="tilapia.jpg" alt="Fish 2">
-                    <p>TILAPIA</p>
-                  <div class="dropdown">
-                <select id="bangusDropdown">
-                    <option value="default">Select an option</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
+                    <div class="product-dropdown">
+                <div class="dropdown">
+                    <button class="dropbtn">BANGUS &#9662;</button>
+                    <div class="dropdown-content">
+                        <span class="option">Option 1</span>
+                        <span class="option">Option 2</span>
+                        <span class="option">Option 3</span>
+                        <span class="option">Option 4</span>
+                    </div>
+                </div>
                 <div class="selections">
-                    <span class="option1"></span>
-                    <span class="option2"></span>
-                    <span class="option3"></span>
-                    <span class="option4"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
                 </div>
                 <button class="placeOrder">Place Order</button>
             </div>
@@ -186,20 +75,21 @@ body {
                 <div class="fish-box" id="fish-box3">
                     <!-- Content for the third box goes here -->
                     <img src="salay.jpg" alt="Fish 3">
-                    <p>SALAY-SALAY</p>
-                  <div class="dropdown">
-                <select id="bangusDropdown">
-                    <option value="default">Select an option</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
+                     <div class="product-dropdown">
+                <div class="dropdown">
+                    <button class="dropbtn">BANGUS &#9662;</button>
+                    <div class="dropdown-content">
+                        <span class="option">Option 1</span>
+                        <span class="option">Option 2</span>
+                        <span class="option">Option 3</span>
+                        <span class="option">Option 4</span>
+                    </div>
+                </div>
                 <div class="selections">
-                    <span class="option1"></span>
-                    <span class="option2"></span>
-                    <span class="option3"></span>
-                    <span class="option4"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
+                    <span class="selected-option"></span>
                 </div>
                 <button class="placeOrder">Place Order</button>
             </div>
