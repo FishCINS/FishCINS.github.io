@@ -29,8 +29,8 @@
 
 
       <div class="orders-area" style="display: none;">
-        <!-- Area to display orders -->
-        <!-- Initial message: "Your Orders are empty" or "Your Cart is empty" -->
+        <!-- Area para sa orders -->
+        <!-- Order message: "Your Orders are empty" o "Your Cart is empty" -->
         <p id="emptyOrdersMsg">Your Orders are empty.</p>
         <ul id="ordersList"></ul>
     </div>
@@ -38,102 +38,53 @@
         <div class="content-section">
             <div class="fish-boxes">
                 <div class="fish-box" id="fish-box1">
-                    <!-- Content for the first box goes here -->
+                    <!-- Dito Content para sa first box -->
                     <img src="bangus.jpg" alt="Fish 1">
-                <div class="product-dropdown">
-                    <div class="dropdown">
-                        <button class="dropbtn">BANGUS &#9662;</button>
-                        <div class="dropdown-content">
-                            <span class="option">Option 1</span>
-                            <span class="option">Option 2</span>
-                            <span class="option">Option 3</span>
-                            <span class="option">Option 4</span>
-                        </div>
-                    </div>
-                    <div class="selections">
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                    </div>
+              <div class="product-info">
+                    <h2>BANGUS</h2>
+                    <textarea class="order-message" placeholder="Enter your order"></textarea>
                     <button class="placeOrder">Place Order</button>
                 </div>
             </div>
                 <div class="fish-box" id="fish-box2">
-                    <!-- Content for the second box goes here -->
+                    <!-- Content para sa pangalawang box -->
                     <img src="tilapia.jpg" alt="Fish 2">
-                <div class="product-dropdown">
-                    <div class="dropdown">
-                        <button class="dropbtn">BANGUS &#9662;</button>
-                        <div class="dropdown-content">
-                            <span class="option">Option 1</span>
-                            <span class="option">Option 2</span>
-                            <span class="option">Option 3</span>
-                            <span class="option">Option 4</span>
-                        </div>
-                    </div>
-                    <div class="selections">
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                    </div>
+                <div class="product-info">
+                    <h2>TILAPIA</h2>
+                    <textarea class="order-message" placeholder="Enter your order"></textarea>
                     <button class="placeOrder">Place Order</button>
                 </div>
             </div>
                 <div class="fish-box" id="fish-box3">
-                    <!-- Content for the third box goes here -->
+                    <!-- Content para sa pangatlong box -->
                     <img src="salay.jpg" alt="Fish 3">
-                <div class="product-dropdown">
-                    <div class="dropdown">
-                        <button class="dropbtn">BANGUS &#9662;</button>
-                        <div class="dropdown-content">
-                            <span class="option">Option 1</span>
-                            <span class="option">Option 2</span>
-                            <span class="option">Option 3</span>
-                            <span class="option">Option 4</span>
-                        </div>
-                    </div>
-                    <div class="selections">
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                        <span class="selected-option"></span>
-                    </div>
+                    <div class="product-info">
+                    <h2>SALAY-SALAY</h2>
+                    <textarea class="order-message" placeholder="Enter your order"></textarea>
                     <button class="placeOrder">Place Order</button>
                 </div>
             </div>
-            </div>
-        </div>
-
-<script>
+ <script>
         document.addEventListener("DOMContentLoaded", function() {
             const ordersBtn = document.getElementById('ordersBtn');
             const ordersArea = document.querySelector('.orders-area');
             const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
             const ordersList = document.getElementById('ordersList');
             const placeOrderBtns = document.querySelectorAll('.placeOrder');
-            const dropdownBtns = document.querySelectorAll('.dropbtn');
+            const productInfo = document.querySelectorAll('.product-info');
 
             ordersBtn.addEventListener('click', function() {
-                ordersArea.style.display = 'block'; // Show orders area
+                ordersArea.style.display = 'block'; // Orders area o box
             });
 
-            dropdownBtns.forEach(btn => {
+            placeOrderBtns.forEach((btn, index) => {
                 btn.addEventListener('click', function() {
-                    const dropdownContent = this.nextElementSibling;
-                    dropdownContent.classList.toggle('show');
-                });
-            });
-
-            placeOrderBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const selectedOption = this.parentElement.querySelector('.selected-option.selected');
-                    if (selectedOption) {
+                    const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
+                    if (orderMessage !== '') {
                         const orderItem = document.createElement('li');
-                        orderItem.textContent = `Order: ${selectedOption.textContent}`;
+                        orderItem.textContent = `Order: ${orderMessage}`;
                         ordersList.appendChild(orderItem);
-                        emptyOrdersMsg.style.display = 'none'; // Hide empty orders message
+                        emptyOrdersMsg.style.display = 'none'; // Para ma hide empty message
                     }
                 });
             });
