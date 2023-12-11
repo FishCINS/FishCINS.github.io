@@ -28,9 +28,7 @@
     </header>
 
 
-      <div class="orders-area" style="display: none;">
-        <!-- Area para sa orders -->
-        <!-- Order message: "Your Orders are empty" o "Your Cart is empty" -->
+     <div class="orders-area" style="display: none;">
         <p id="emptyOrdersMsg">Your Orders are empty.</p>
         <ul id="ordersList"></ul>
     </div>
@@ -67,65 +65,58 @@
                 </div>
             </div>
 
-                <div id="ordersModal" class="modal">
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Your Orders</h2>
-                    <div class="orders-container">
-                    <p id="modalEmptyOrdersMsg">Your Orders are empty.</p>
-                    <ul id="modalOrdersList"></ul>
-                </div>
-                  </div>
-                </div>
+             <div id="ordersModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Your Orders</h2>
+        <div class="orders-container">
+            <p id="modalEmptyOrdersMsg">Your Orders are empty.</p>
+            <ul id="modalOrdersList"></ul>
+        </div>
+    </div>
+</div>
+    
  <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const ordersBtn = document.getElementById('ordersBtn');
-            const ordersArea = document.querySelector('.orders-area');
-            const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
-            const ordersList = document.getElementById('ordersList');
-            const placeOrderBtns = document.querySelectorAll('.placeOrder');
-            const productInfo = document.querySelectorAll('.product-info');
+    const ordersBtn = document.getElementById('ordersBtn');
+    const ordersArea = document.querySelector('.orders-area');
+    const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
+    const ordersList = document.getElementById('ordersList');
+    const placeOrderBtns = document.querySelectorAll('.placeOrder');
+    const productInfo = document.querySelectorAll('.product-info');
+    const ordersModal = document.getElementById('ordersModal');
+    const modalEmptyOrdersMsg = document.getElementById('modalEmptyOrdersMsg');
+    const modalOrdersList = document.getElementById('modalOrdersList');
+    const closeModal = document.querySelector('.close');
 
-            ordersBtn.addEventListener('click', function() {
-                ordersArea.style.display = 'block'; // Orders area o box
-            });
+    ordersBtn.addEventListener('click', function() {
+        ordersArea.style.display = 'block';
+        ordersModal.style.display = 'block';
+    });
 
-            placeOrderBtns.forEach((btn, index) => {
-                btn.addEventListener('click', function() {
-                    const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
-                    if (orderMessage !== '') {
-                        const orderItem = document.createElement('li');
-                        orderItem.textContent = `Order: ${orderMessage}`;
-                        ordersList.appendChild(orderItem);
-                        emptyOrdersMsg.style.display = 'none'; // Para ma hide empty message
-                    }
-            const ordersModal = document.getElementById('ordersModal');
-            const modalEmptyOrdersMsg = document.getElementById('modalEmptyOrdersMsg');
-            const modalOrdersList = document.getElementById('modalOrdersList');
-            const closeModal = document.querySelector('.close');
+    closeModal.addEventListener('click', function() {
+        ordersModal.style.display = 'none';
+    });
 
-                ordersBtn.addEventListener('click', function() {
-                ordersModal.style.display = 'block'; 
-                });
-
-                closeModal.addEventListener('click', function() {
-                ordersModal.style.display = 'none'; 
-                });
-
-    // Para sa updating ng Orders
-            function updateModalOrders(orderMessage) {
-            const orderItem = document.createElement('li');
-            orderItem.textContent = `Order: ${orderMessage}`;
-            modalOrdersList.appendChild(orderItem);
-            modalEmptyOrdersMsg.style.display = 'none'; 
-        }
-
-            placeOrderBtns.forEach((btn, index) => {
-            btn.addEventListener('click', function() {
+    placeOrderBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
             const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
             if (orderMessage !== '') {
+                const orderItem = document.createElement('li');
+                orderItem.textContent = `Order: ${orderMessage}`;
+                ordersList.appendChild(orderItem);
+                emptyOrdersMsg.style.display = 'none';
                 updateModalOrders(orderMessage);
             }
+        });
+    });
+
+    function updateModalOrders(orderMessage) {
+        const orderItem = document.createElement('li');
+        orderItem.textContent = `Order: ${orderMessage}`;
+        modalOrdersList.appendChild(orderItem);
+        modalEmptyOrdersMsg.style.display = 'none';
+    }
         });
     });
 });
