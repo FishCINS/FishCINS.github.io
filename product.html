@@ -77,20 +77,19 @@
 </div>
     
  <script>
-        document.addEventListener("DOMContentLoaded", function() {
+       document.addEventListener("DOMContentLoaded", function() {
     const ordersBtn = document.getElementById('ordersBtn');
-    const ordersArea = document.querySelector('.orders-area');
-    const emptyOrdersMsg = document.getElementById('emptyOrdersMsg');
-    const ordersList = document.getElementById('ordersList');
+    const ordersModal = document.getElementById('ordersModal');
+    const closeModal = document.querySelector('.close');
     const placeOrderBtns = document.querySelectorAll('.placeOrder');
     const productInfo = document.querySelectorAll('.product-info');
-    const ordersModal = document.getElementById('ordersModal');
-    const modalEmptyOrdersMsg = document.getElementById('modalEmptyOrdersMsg');
     const modalOrdersList = document.getElementById('modalOrdersList');
-    const closeModal = document.querySelector('.close');
+    const modalEmptyOrdersMsg = document.getElementById('modalEmptyOrdersMsg');
+    
+    let orders = []; // Array to store orders
 
     ordersBtn.addEventListener('click', function() {
-        ordersArea.style.display = 'block';
+        displayOrders();
         ordersModal.style.display = 'block';
     });
 
@@ -98,28 +97,35 @@
         ordersModal.style.display = 'none';
     });
 
-      placeOrderBtns.forEach((btn, index) => {
+    placeOrderBtns.forEach((btn, index) => {
         btn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            event.stopPropagation(); // Stop event propagation
+            event.preventDefault();
+            event.stopPropagation();
 
             const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
             if (orderMessage !== '') {
-                const orderItem = document.createElement('li');
-                orderItem.textContent = `Order: ${orderMessage}`;
-                ordersList.appendChild(orderItem);
-                emptyOrdersMsg.style.display = 'none';
-                updateModalOrders(orderMessage);
+                orders.push(orderMessage); // Store the order message in the orders array
+                displayOrders();
             }
         });
     });
-function updateModalOrders(orderMessage) {
-    const orderItem = document.createElement('li');
-    orderItem.textContent = `Order: ${orderMessage}`;
-    modalOrdersList.appendChild(orderItem); // Adds to the modal orders list
-    modalEmptyOrdersMsg.style.display = 'none';
-}
-    });
+
+    function displayOrders() {
+        modalOrdersList.innerHTML = ''; // Clear the orders list
+
+        if (orders.length === 0) {
+            modalEmptyOrdersMsg.style.display = 'block';
+        } else {
+            modalEmptyOrdersMsg.style.display = 'none';
+
+            orders.forEach(orderMessage => {
+                const orderItem = document.createElement('li');
+                orderItem.textContent = `Order: ${orderMessage}`;
+                modalOrdersList.appendChild(orderItem);
+            });
+        }
+    }
+});
     </script>
 
     
