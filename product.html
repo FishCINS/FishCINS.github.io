@@ -89,16 +89,19 @@
     let orders = []; // Array to store orders
 
     ordersBtn.addEventListener('click', function() {
+        console.log('Orders button clicked'); // Check if the click event is detected
         displayOrders();
         ordersModal.style.display = 'block';
     });
 
     closeModal.addEventListener('click', function() {
+        console.log('Close button clicked'); // Check if the close button click event is detected
         ordersModal.style.display = 'none';
     });
 
     placeOrderBtns.forEach((btn, index) => {
         btn.addEventListener('click', function(event) {
+            console.log('Place order button clicked'); // Check if place order button click is detected
             event.preventDefault();
             event.stopPropagation();
 
@@ -125,64 +128,6 @@
             });
         }
     }
-
-           let orders = {}; // Use an object to store orders for each fish
-
-    ordersBtn.addEventListener('click', function() {
-        displayOrders();
-        ordersModal.style.display = 'block';
-    });
-
-    closeModal.addEventListener('click', function() {
-        ordersModal.style.display = 'none';
-    });
-
-    placeOrderBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
-            const fishType = productInfo[index].querySelector('h2').textContent.toUpperCase(); // Get the fish type
-
-            if (orderMessage !== '') {
-                if (!orders[fishType]) {
-                    orders[fishType] = []; // Create an array for the fish type if it doesn't exist
-                }
-                orders[fishType].push(orderMessage); // Store the order message for the fish type
-                displayOrders();
-            }
-        });
-    });
-
-    function displayOrders() {
-        modalOrdersList.innerHTML = ''; // Clear the orders list
-
-        let ordersCount = 0;
-
-        for (const fishType in orders) {
-            if (orders[fishType].length > 0) {
-                const fishOrders = orders[fishType];
-                const fishSection = document.createElement('div');
-
-                fishOrders.forEach(orderMessage => {
-                    const orderItem = document.createElement('li');
-                    orderItem.textContent = `${fishType} ORDER: ${orderMessage}`;
-                    fishSection.appendChild(orderItem);
-                    ordersCount++;
-                });
-
-                modalOrdersList.appendChild(fishSection);
-            }
-        }
-
-        if (ordersCount === 0) {
-            modalEmptyOrdersMsg.style.display = 'block';
-        } else {
-            modalEmptyOrdersMsg.style.display = 'none';
-        }
-    }
-           
 });
     </script>
 
