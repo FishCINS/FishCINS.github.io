@@ -223,12 +223,13 @@ body {
 }
 
 .orders-container {
-    background-color: var(--color-new);
+    background-color: var(--color-new); /* Set the background color for the whole container */
     border-radius: 10px;
     padding: 20px;
     width: 70%;
     max-width: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-yellow); /* Change the text color */
 }
 
 .orders-container h2 {
@@ -238,7 +239,6 @@ body {
 }
 
 .orders-container p {
-    color: var(--color-white);
     margin-bottom: 15px;
 }
 
@@ -248,7 +248,6 @@ body {
 }
 
 .orders-container ul li {
-    color: var(--color-yellow);
     font-size: 16px;
     margin-bottom: 10px;
 }
