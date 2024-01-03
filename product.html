@@ -82,6 +82,7 @@
     const ordersModal = document.getElementById('ordersModal');
     const closeModal = document.querySelector('.close');
     const placeOrderBtns = document.querySelectorAll('.placeOrder');
+    const productTitles = document.querySelectorAll('.fish-box h2'); // Titles of the fish items
     const productInfo = document.querySelectorAll('.product-info');
     const modalOrdersList = document.getElementById('modalOrdersList');
     const modalEmptyOrdersMsg = document.getElementById('modalEmptyOrdersMsg');
@@ -89,25 +90,23 @@
     let orders = []; // Array to store orders
 
     ordersBtn.addEventListener('click', function() {
-        console.log('Orders button clicked'); // Check if the click event is detected
         displayOrders();
         ordersModal.style.display = 'block';
     });
 
     closeModal.addEventListener('click', function() {
-        console.log('Close button clicked'); // Check if the close button click event is detected
         ordersModal.style.display = 'none';
     });
 
     placeOrderBtns.forEach((btn, index) => {
         btn.addEventListener('click', function(event) {
-            console.log('Place order button clicked'); // Check if place order button click is detected
             event.preventDefault();
             event.stopPropagation();
 
             const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
             if (orderMessage !== '') {
-                orders.push(orderMessage); // Store the order message in the orders array
+                const productTitle = productTitles[index].textContent; // Get the fish item title
+                orders.push({ item: productTitle, message: orderMessage }); // Store item and order message
                 displayOrders();
             }
         });
@@ -121,9 +120,9 @@
         } else {
             modalEmptyOrdersMsg.style.display = 'none';
 
-            orders.forEach(orderMessage => {
+            orders.forEach(order => {
                 const orderItem = document.createElement('li');
-                orderItem.textContent = `Order: ${orderMessage}`;
+                orderItem.textContent = `${order.item} Order: ${order.message}`; // Include item name in the order message
                 modalOrdersList.appendChild(orderItem);
             });
         }
