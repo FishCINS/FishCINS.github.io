@@ -98,9 +98,11 @@
         ordersModal.style.display = 'none';
     });
 
-     placeOrderBtns.forEach((btn, index) => {
+      placeOrderBtns.forEach((btn, index) => {
         btn.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevents the default form submission behavior
+            event.preventDefault(); // Prevent default form submission
+            event.stopPropagation(); // Stop event propagation
+
             const orderMessage = productInfo[index].querySelector('.order-message').value.trim();
             if (orderMessage !== '') {
                 const orderItem = document.createElement('li');
@@ -111,7 +113,6 @@
             }
         });
     });
-
 function updateModalOrders(orderMessage) {
     const orderItem = document.createElement('li');
     orderItem.textContent = `Order: ${orderMessage}`;
