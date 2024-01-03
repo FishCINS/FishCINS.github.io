@@ -268,3 +268,30 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+.product-info {
+    background-color: var(--color-new);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-yellow); /* Change the text color */
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Style for the Place Order button */
+.placeOrder {
+    background-color: var(--color-primary);
+    color: var(--color-yellow);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.placeOrder:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-primary);
+}
