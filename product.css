@@ -295,3 +295,38 @@ body {
     background-color: var(--color-yellow);
     color: var(--color-primary);
 }
+
+/* General styles for sections */
+.about-section,
+.contact-section,
+.location-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f7f7f7; /* Adjust as needed */
+}
+
+/* Left content */
+.content-left {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-primary); /* Adjust color as needed */
+}
+
+.section-description {
+    background-color: rgba(255, 255, 255, 0.7); /* Faded white background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Right content - Adjust image styles or content as needed */
+.content-right {
+    flex: 1;
+}
+
+
