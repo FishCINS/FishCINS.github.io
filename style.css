@@ -177,12 +177,10 @@ body {
     border-radius: 5px;
 }
 
-/* Right content - Adjust image styles or content as needed */
 .content-right {
     flex: 1;
 }
 
-.section-description,
 .about-description,
 .contact-details,
 .location-description {
@@ -194,7 +192,6 @@ body {
     margin-top: 20px;
 }
 
-.section-description p,
 .about-description p,
 .contact-details p,
 .location-description p {
