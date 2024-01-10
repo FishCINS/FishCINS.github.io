@@ -224,3 +224,31 @@ body {
     color: car(--color-black);
     font-family: 'Arial, sans-serif;
 }
+
+.about-section {
+    background-color: #f7f7f7;
+    padding: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--color-black);
+    font-family: 'Arial', sans-serif;
+}
+
+.about-section .content-left {
+    flex: 1;
+}
+
+.about-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    font-family: 'Pacifico', cursive; 
+}
+
+.about-section .section-description {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--color-black);
+    font-family: 'Arial', sans-serif;
+}
