@@ -149,7 +149,7 @@ body {
 .about-section,
 .contact-section,
 .location-section {
-    background-color: var(--color-primary);
+    background-color: rgba(48, 48, 48, 0.8); /* Adjust the last value (0.8) for opacity */
     color: var(--color-white);
     font-family: 'Pacifico', cursive;
     padding: 20px;
@@ -167,7 +167,7 @@ body {
 .about-description,
 .contact-details,
 .location-description {
-    background-color: var(--color-new);
+    background-color: rgba(30, 25, 48, 0.8); 
     color: var(--color-white);
     font-family: 'Lobster', cursive;
     padding: 20px;
@@ -188,12 +188,6 @@ body {
 .about-section h3,
 .contact-section h3,
 .location-section h3 {
-    font-family: 'Pacifico';
+    font-family: 'Pacifico', cursive;
     font-size: 30px;
-}
-
-.about-section p,
-.contact-section p,
-.location-section p {
-    font-family: 'Lobster', cursive; 
 }
