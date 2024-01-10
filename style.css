@@ -133,7 +133,7 @@ body {
 .fish-part {
     color: #FFFF00;
     font-size: 1.2em; /* Adjust the size */
-    font-family: 'Pacifico', cursive; /* Apply the same font as the title */
+    font-family: 'Pacifico';/* Apply the same font as the title */
     letter-spacing: 3px; /* Increase the spacing between letters */
     margin-right: -5px; /* Adjust the spacing between "Fish" and "CINS" */
 }
@@ -141,7 +141,7 @@ body {
 .cins-part {
     color: #ff6303;
     font-size: 1.2em; /* Adjust the size */
-    font-family: 'Pacifico', cursive; /* Apply the same font as the title */
+    font-family: 'Pacifico'; /* Apply the same font as the title */
     letter-spacing: 3px; /* Increase the spacing between letters */
 }
 
@@ -151,7 +151,7 @@ body {
 .location-section {
     background-color: rgba(48, 48, 48, 0.8); /* Adjust the last value (0.8) for opacity */
     color: var(--color-white);
-    font-family: 'Pacifico', cursive;
+    font-family: 'Pacifico';
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
@@ -169,7 +169,7 @@ body {
 .location-description {
     background-color: rgba(30, 25, 48, 0.8); 
     color: var(--color-white);
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster';
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
@@ -179,7 +179,7 @@ body {
 .about-description p,
 .contact-details p,
 .location-description p {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster';
     font-size: 1em;
     line-height: 1.6;
     color: var(--color-white);
