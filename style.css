@@ -188,7 +188,8 @@ body {
 .about-section h3,
 .contact-section h3,
 .location-section h3 {
-    font-family: 'Pacifico', cursive; 
+    font-family: 'Pacifico';
+    font-size: 30px;
 }
 
 .about-section p,
