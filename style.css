@@ -184,3 +184,15 @@ body {
     line-height: 1.6;
     color: var(--color-white);
 }
+
+.about-section h3,
+.contact-section h3,
+.location-section h3 {
+    font-family: 'Pacifico', cursive; 
+}
+
+.about-section p,
+.contact-section p,
+.location-section p {
+    font-family: 'Lobster', cursive; 
+}
