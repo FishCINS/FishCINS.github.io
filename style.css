@@ -182,4 +182,33 @@ body {
     flex: 1;
 }
 
-/* Additional styles as needed */
+.details-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #f59678;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.details-section .content-left {
+    felx: 1;
+    padding-right: 20px;
+}
+
+.details-section h3 {
+    margin-top: 20px;
+}
+
+.details-section .section-description {
+    background-color: #f59678;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.details-section .contact-details a {
+    color: var(--color-primary);
+}
