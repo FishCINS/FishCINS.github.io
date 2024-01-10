@@ -169,7 +169,7 @@ body {
 .location-description {
     background-color: var(--color-new);
     color: var(--color-white);
-    font-family: 'Arial', sans-serif;
+     font-family: 'Pacifico', cursive;
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
@@ -179,7 +179,7 @@ body {
 .about-description p,
 .contact-details p,
 .location-description p {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 1em;
     line-height: 1.6;
     color: var(--color-white);
