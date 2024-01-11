@@ -14,10 +14,10 @@
             <h1 class="Logo">Fish<span>CINS</span></h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="product.html">Product</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#location">Location</a></li>
             </ul>
         </div>
     </header>
@@ -38,20 +38,23 @@
         </div>
     </section>
 
-<section class="about-section">
+<section id ="about" class="about-section">
     <div class="content-left">
         <h2 class="section-title">Details</h2>
         <div class="about-description">
             <h3>About</h3>
         <p class="section-description">Rennie Cajefe is the owner of the store, and we made and present you this website called FishCins. The products that we can sell varies on different types of fish. You can order on our website for ease and so you don't have to trouble yourself going to our physical store. Our fish sales are always fresh even if you go to our website and place an order, and we will deliver it to you. We will make deliveries from door to door so you don't have to pick up your fish that you brought on our website.</p>
     </div>
+        </section>
+ <section id ="contact" class="about-section">
      <div class="contact-details">
             <h3>Contact Details</h3>
             <p>Facebook: https://www.facebook.com/profile.php?id=61555673122380&mibextid=ZbWKwL</p>
             <p>Email: fishcins29@gmail.com</p>
             <p>Phone: +63 123 456 7890</p>
         </div>
-        <!-- Location Description -->
+     </section>
+  <section id ="location" class="about-section">
         <div class="location-description">
             <h3>Location</h3>
             <p>Find us at 1F. Banaag, Pineda Pasig City.</p>
@@ -63,6 +66,27 @@
         <!-- You can add more content or images here if needed -->
     </div>
 </section>
+
+    
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+
+
+            document.querySelectorAll('header ul a').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href').substring(1); // Remove the "#" from the href
+                    scrollToSection(sectionId);
+                });
+            });
+        });
+    </script>
     
 </body>
 </html>
