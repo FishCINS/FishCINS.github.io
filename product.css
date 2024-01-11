@@ -296,14 +296,15 @@ body {
     color: var(--color-primary);
 }
 
-.Logo {
-    display: flex;
-    align-items: center;
-}
 
-..Logo img {
+.Logo img {
     width: 30px; 
     height: 30px;
     border-radius: 50%; 
     margin-right: 10px;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
 }
