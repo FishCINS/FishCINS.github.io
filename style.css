@@ -191,3 +191,22 @@ body {
     font-family: 'Pacifico';
     font-size: 30px;
 }
+
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.Logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.logo-container img {
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+
